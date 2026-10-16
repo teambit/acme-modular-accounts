@@ -1,0 +1,33 @@
+---
+description: "The customer's saved addresses, with a default marker and an add-address modal."
+labels: ['react', 'ui', 'address', 'accounts']
+---
+
+`AddressBook` lists saved addresses as cards and marks the default one. "Add address" opens the checkout `AddressForm` in a modal, so an address saved here is validated exactly like one entered at checkout. It is controlled: it reports changes through `onAdd` and `onSelectDefault` and leaves storing them to you.
+
+## List addresses
+
+```tsx
+import { AddressBook } from '@acme-modular/accounts.accounts.address-book';
+
+<AddressBook addresses={customer.addresses} defaultAddressId={customer.defaultAddress?.id} />
+```
+
+## Save changes to the session
+
+```tsx
+const { customer, updateCustomer } = useSession();
+
+<AddressBook
+  addresses={customer.addresses}
+  defaultAddressId={customer.defaultAddress?.id}
+  onAdd={(address) => updateCustomer(customer.withAddress(address))}
+  onSelectDefault={(id) => updateCustomer(Customer.from({ ...customer.toObject(), defaultAddressId: id }))}
+/>
+```
+
+## Empty state
+
+```tsx
+<AddressBook addresses={[]} onAdd={saveAddress} />
+```

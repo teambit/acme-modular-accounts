@@ -1,0 +1,31 @@
+---
+description: 'An email and password sign-in form backed by the ACME session.'
+labels: ['react', 'ui', 'form', 'auth', 'accounts']
+---
+
+`LoginForm` signs a customer in through `useSession`. It checks for empty fields before calling the backend, disables the button while signing in, and shows an alert when the credentials are rejected. Render it inside a `SessionProvider`; with the default mock backend the demo account is `jordan@acme.example` / `acme`.
+
+## Sign in
+
+```tsx
+import { SessionProvider } from '@acme-modular/accounts.accounts.use-session';
+import { LoginForm } from '@acme-modular/accounts.accounts.login-form';
+
+<SessionProvider>
+  <LoginForm />
+</SessionProvider>
+```
+
+## Redirect after sign-in
+
+```tsx
+<LoginForm onSignedIn={(customer) => navigate(`/account/${customer.id}`)} />
+```
+
+## In a card
+
+```tsx
+<Card title="Sign in to ACME">
+  <LoginForm />
+</Card>
+```

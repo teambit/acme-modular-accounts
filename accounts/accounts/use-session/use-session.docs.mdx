@@ -1,0 +1,33 @@
+---
+description: 'The signed-in ACME customer, with sign-in, sign-out and profile updates.'
+labels: ['hook', 'react', 'session', 'auth', 'accounts']
+---
+
+`SessionProvider` holds the signed-in `Customer` and `useSession` reads it anywhere below. Without a `client` it talks to an in-memory mock backend where `jordan@acme.example` / `acme` signs in and anything else answers 401. `signIn` never rejects: a failure leaves the status at `signed-out` and puts a readable message in `error`.
+
+## Provide a session
+
+```tsx
+import { SessionProvider } from '@acme-modular/accounts.accounts.use-session';
+
+<SessionProvider client={api}>
+  <App />
+</SessionProvider>
+```
+
+## Sign in and out
+
+```tsx
+import { useSession } from '@acme-modular/accounts.accounts.use-session';
+
+const { status, customer, error, signIn, signOut } = useSession();
+await signIn(email, password);
+if (status === 'signed-in') greet(customer!.firstName);
+```
+
+## Update the customer
+
+```tsx
+const { customer, updateCustomer } = useSession();
+updateCustomer(customer!.withAddress(newAddress));
+```

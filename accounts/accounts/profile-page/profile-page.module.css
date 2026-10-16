@@ -1,0 +1,45 @@
+.profilePage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl, 24px);
+  max-width: 960px;
+  padding: var(--spacing-xl, 24px);
+  color: var(--colors-text-primary, #212121);
+}
+
+.signedOut {
+  max-width: 420px;
+}
+
+.heading {
+  margin: 0;
+  font-size: var(--typography-sizes-heading-h2, 32px);
+  font-weight: var(--typography-font-weight-bold, 700);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium, 8px);
+}
+
+.sectionHeading {
+  margin: 0;
+  font-size: var(--typography-sizes-heading-h4, 20px);
+  font-weight: var(--typography-font-weight-semi-bold, 600);
+}
+
+.muted {
+  margin: 0;
+  color: var(--colors-text-secondary, #666);
+  font-size: var(--typography-sizes-body-small, 14px);
+}
+
+.orders {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--spacing-large, 16px);
+}
