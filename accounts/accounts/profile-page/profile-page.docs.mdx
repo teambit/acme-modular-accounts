@@ -1,0 +1,27 @@
+---
+description: "The ACME account page: sign-in, saved addresses and recent orders."
+labels: ['react', 'page', 'profile', 'accounts']
+---
+
+`ProfilePage` is the customer's account page. Signed out, it shows the `LoginForm`. Signed in, it greets the customer, lets them add addresses and pick a default through the `AddressBook` (saved with `updateCustomer`), and lists their three most recent orders. Without a `client`, orders come from a mock backend over `mockOrders()`. Render it inside a `SessionProvider`.
+
+## Account route
+
+```tsx
+import { SessionProvider } from '@acme-modular/accounts.accounts.use-session';
+import { ProfilePage } from '@acme-modular/accounts.accounts.profile-page';
+
+<SessionProvider client={api}>
+  <ProfilePage client={api} />
+</SessionProvider>
+```
+
+## Preview a signed-in customer
+
+```tsx
+import { mockCustomer } from '@acme-modular/platform.entities.customer';
+
+<SessionProvider initialCustomer={mockCustomer()}>
+  <ProfilePage />
+</SessionProvider>
+```

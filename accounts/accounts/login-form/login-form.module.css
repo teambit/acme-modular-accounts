@@ -1,0 +1,6 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-large, 16px);
+  max-width: 360px;
+}
