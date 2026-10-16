@@ -12,21 +12,21 @@
     "accounts/address-book": {
         "name": "accounts/address-book",
         "scope": "acme-modular.accounts",
-        "version": "aa28ccf917578d47f1e86da65c78dc2c15af0ddd",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "accounts/accounts/address-book"
     },
     "accounts/login-form": {
         "name": "accounts/login-form",
         "scope": "acme-modular.accounts",
-        "version": "35dcbfd31175016ae08ead089b16be1ec85656a4",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "accounts/accounts/login-form"
     },
     "accounts/profile-page": {
         "name": "accounts/profile-page",
         "scope": "acme-modular.accounts",
-        "version": "84b30ad66fd647b4410b13a50de9dc3f68841d0f",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "accounts/accounts/profile-page"
     },
